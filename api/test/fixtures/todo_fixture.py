@@ -20,3 +20,8 @@ def todo_mock() -> Todo:
         description="bar",
         done=False
     )
+
+
+@pytest.fixture
+def todos_mock(todo_mock):
+    return [todo_mock for _ in range(10)]
